@@ -1,4 +1,4 @@
-# An example app for k8s-template
+# An example app for k8s-template - playground for discovering akka-streams-kafka 
 
 Exposes an API endpoint:
 
