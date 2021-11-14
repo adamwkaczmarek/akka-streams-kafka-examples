@@ -3,6 +3,8 @@ package com.softwaremill.k8s.example
 import java.io.StringWriter
 import java.util.concurrent.atomic.AtomicBoolean
 
+import akka.actor.ActorSystem
+import akka.stream.ActorMaterializer
 import cats.effect._
 import cats.implicits._
 import com.typesafe.scalalogging.StrictLogging
@@ -16,6 +18,9 @@ import org.http4s.server.Router
 import org.http4s.server.blaze._
 
 object Main extends IOApp with StrictLogging {
+
+  private implicit val system = ActorSystem("QuickStart")
+  private implicit val materializer = ActorMaterializer()
 
   // metrics
   DefaultExports.initialize()
